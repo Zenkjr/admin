@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class car extends Model
+class clazzes extends Model
 {
     //
 }
