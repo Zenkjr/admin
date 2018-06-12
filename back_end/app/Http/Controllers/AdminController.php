@@ -15,6 +15,7 @@ class AdminController extends Controller
     public function index()
     {
         //
+        return view('admin.listCar');
     }
 
     /**
@@ -25,6 +26,7 @@ class AdminController extends Controller
     public function create()
     {
         //
+        return view('admin.add');
     }
 
     /**
@@ -36,6 +38,8 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+//        return 'store';
+
     }
 
     /**
