@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/admin','AdminController');
+Route::get("admin/json/{id}", "AdminController@showJson");
+Route::put('/admin/{id}','AdminController@update');

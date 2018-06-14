@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
-            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
-            crossorigin="anonymous"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{asset('/css/listCar.css')}}">
+    <script src="{{asset('js/app.js')}}"></script>
+
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <title>Document</title>
 </head>
@@ -35,9 +36,13 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
-                <a class="list-group p-3 border-top " href="#">Bảng Diều Khiển</a>
+                <a class="list-group p-3 border-top " href="#">
+                    <span>
+                        <i class="fas fa-tachometer-alt"></i>Bảng Diều Khiển
+                    </span>
+                </a>
                 <a class="list-group p-3 border-top" href="#">D.s Xe</a>
-                <a class="list-group p-3 border-top" href="#">
+                <a class="list-group p-3 border-top" methods="get" href="/admin">
                     <sapn>
                         <i class="fas fa-list"></i> D.s Xe
                     </sapn>
@@ -54,11 +59,15 @@
             </div>
         </div>
     </div>
+    {{--<script src="{{asset('/js/listCar.js')}}"></script>--}}
 
-    <section class="container">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+{{--<section class="container">--}}
 
 
-    </section>
+{{--</section>--}}
 </body>
 </html>
 
