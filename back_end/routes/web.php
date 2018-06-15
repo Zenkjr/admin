@@ -13,9 +13,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::resource('/admin','AdminController');
+//Route::get("admin/json/{id}", "AdminController@showJson");
+
+Route::get('admin', function () {
+    return view('layout.admin_template');
 });
-Route::resource('/admin','AdminController');
-Route::get("admin/json/{id}", "AdminController@showJson");
-Route::put('/admin/{id}','AdminController@update');
+
+Route::get('admin/car/list', 'CarController@index');
+Route::get('admin/car/create', 'CarController@create');

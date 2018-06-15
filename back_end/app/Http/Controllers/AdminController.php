@@ -54,17 +54,22 @@ class AdminController extends Controller
         $car->clazz_id = $request->get('clazz_id');
         $car->price = $request->get('price');
         $car->note = $request->get('note');
-
-
-//        $file = $request->file('url_img');
-//        if (File::exists($file)) {
-//            $file->store('public/uploaded');
-//            $image->url_img = "storage/uploaded/" . $file->hashName();
-//        }
-//        $file->store('public/uploaded');
+//        $file = $request->file('url_img')->store('/public/upload');
+//        echo $file;
+//
+//        $car->url_img = $file->;
+//
+//
+        $file = $request->file('url_img');
+        if (File::exists($file)) {
+            $file->store('public/upload');
+            echo $file;
+            $car->url_img = "storage/upload/" . $file->hashName();
+        }
 
 //        $image->save();
         $car->save();
+
         return redirect('/admin');
     }
 
@@ -88,9 +93,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
-        return 'edit';
-//        return view('admin.add');
+        $car = cars::find($id);
+
+        return $car;
     }
 
     /**
@@ -104,6 +109,7 @@ class AdminController extends Controller
     {
         //
 //        return view('admin.add');
+        if($request->get('isAjax')){
         $car = cars::find($id);
         $car->name = $request->get('name_Update');
         $car->maker_id = $request->get('maker_id_Update');
@@ -117,6 +123,7 @@ class AdminController extends Controller
 
         $car->save();
         return $car;
+        }
 //        if ($request->get("isAjax")) {
 //            return $car;
 //        }
@@ -142,9 +149,9 @@ class AdminController extends Controller
     public function showJson($id)
     {
         //
-        $car = cars::find($id);
-
-        return $car;
+//        $car = cars::find($id);
+//
+//        return $car;
     }
 
 }

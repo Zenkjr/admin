@@ -5,7 +5,7 @@
     </div>
     <div class="pt-4 ">
 
-        <form action="/admin" method="post">
+        <form action="/admin" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
 
             <div class="row ml-0 mr-0">
@@ -99,7 +99,7 @@
                         {{--<span> <i class="far fa-file-image"></i><input type="file" name="img_url" placeholder="">  </span>--}}
                         {{--<input type="file" class="custom-file-input" id="validatedCustomFile" required>--}}
                         {{--<label class="custom-file-label" for="validatedCustomFile"><i class="far fa-file-image"></i> Chọn images</label>--}}
-                        <img src="" type="file" alt="">
+                        {{--<img src="" type="file" alt="">--}}
                         <input type="file" name="url_img"> <i class="far fa-file-image"></i>
 
                     </div>
