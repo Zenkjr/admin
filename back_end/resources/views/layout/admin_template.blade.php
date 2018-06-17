@@ -5,9 +5,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>Boss loc</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap/dist/css/bootstrap.min.css") }}">
@@ -16,18 +17,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset("/bower_components/Ionicons/css/ionicons.min.css") }}">
 
-    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-daterangepicker/daterangepicker.css") }}">
+    <link rel="stylesheet" href="{{asset('/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href=" {{asset('/bower_components/admin-lte/plugins/iCheck/all.css')}}">
+    <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.css')}}">
 
-    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css") }}">
 
+    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css") }}">
+    <link rel="stylesheet" href="{{asset("/bower_components/admin-lte/dist/css/skins/skin-blue.min.css")}}">
+    <link rel="stylesheet" href=" {{asset("/bower_components/datatables.net-bs/css/dataTables.bootstrap.css")}}">
+    {{--<link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">--}}
+    <link rel="stylesheet" href="{{ asset("/bower_components/select2/dist/css/select2.css") }}">
+    <link rel="stylesheet" href="{{asset('/bower_components/admin-lte/dist/css/AdminLTE.css')}}">
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/select2/dist/css/select2.min.css") }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset("/bower_components/admin-lte/dist/css/AdminLTE.min.css") }}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/admin-lte/dist/css/skins/_all-skins.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/admin-lte/dist/css/skins/_all-skins.css") }}">
+{{--    <link rel="stylesheet" href="{{asset("js/app.js")}}">--}}
+{{--    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css") }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset("/bower_components/bootstrap-daterangepicker/daterangepicker.css") }}">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -191,22 +200,25 @@ desired effect
 <!-- FastClick -->
 <script src="{{ asset("/bower_components/fastclick/lib/fastclick.js") }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset("/bower_components/admin-lte/dist/js/adminlte.min.js")}}></script>
-<!-- page script -->
-<script>
-    $(function () {
-        $('#example1').DataTable()
-        $('#example2').DataTable({
-            'paging'      : true,
-            'lengthChange': false,
-            'searching'   : false,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false
-        })
-    })
-</script>
 
+{{--<script src="{{ asset("/bower_components/admin-lte/dist/js/adminlte.js")}}"></script>--}}
+<!-- page script -->
+{{--<script src="{{asset('js/app.js')}}"></script>--}}
+{{--<script>--}}
+    {{--$(function () {--}}
+        {{--$('#example1').DataTable()--}}
+        {{--$('#example2').DataTable({--}}
+            {{--'paging'      : true,--}}
+            {{--'lengthChange': false,--}}
+            {{--'searching'   : false,--}}
+            {{--'ordering'    : true,--}}
+            {{--'info'        : true,--}}
+            {{--'autoWidth'   : false--}}
+        {{--})--}}
+    {{--})--}}
+{{--</script>--}}
+
+@yield('script')
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->

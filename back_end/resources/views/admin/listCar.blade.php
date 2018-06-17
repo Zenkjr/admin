@@ -29,7 +29,7 @@
                         <th scope="row">{{$item->id}}</th>
                         <th class="col-md-2" style="width: 5%;">
                             <div class="card"
-                                 style="background-image: url('{{$item->url_img}}'); background-size: cover; width: 60px; height: 60px;">
+                                 style="background-image: url('{{$item->img}}'); background-size: cover; width: 60px; height: 60px;">
                             </div>
                             {{--<img src="{{$item->img_url}}" alt="" class="img-thumbnail rounded-circle w-50">--}}
                         </th>

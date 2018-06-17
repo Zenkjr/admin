@@ -141,8 +141,9 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-        cars::destroy($id);
         return 'destroy';
+//        cars::destroy($id);
+//        return 'destroy';
 
     }
 

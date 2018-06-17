@@ -61,8 +61,7 @@
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">List Brand</a></li>
-                    <li><a href="#">Create New Brand</a></li>
+                    <li><a href="/admin/brand/list">List Brand</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -72,8 +71,7 @@
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">List Class</a></li>
-                    <li><a href="#">Create New Class</a></li>
+                    <li><a href="/admin/clazz/list">List Class</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -88,15 +86,57 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> <span>Preorder Manager</span>
+                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> <span>Preorder Manager</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">List Preorder</a></li>
+                    <li><a href="admin/preorder/list">List Preorder</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> <span>Country Manager</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="admin/country/list">List Country</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> <span>Images Manager</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="admin/image/list">List Images</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-archive" aria-hidden="true"></i> <span>car in stock</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="admin/stock/list">List car in stock</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-eyedropper" aria-hidden="true"></i>
+                    <span>Color</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="admin/color/list">List Color</a></li>
+                </ul>
+            </li>
+
         </ul>
         <!-- /.sidebar-menu -->
     </section>
