@@ -26,13 +26,15 @@ Route::get('admin', function () {
 Route::get('admin/car/list', 'CarController@index');
 Route::get('admin/car/create', 'CarController@create');
 Route::post('admin/car/store','CarController@store');
+Route::delete('/car/destroy/{id}','CarController@destroy');
+
 
 Route::get('admin/brand/list', 'BrandController@index');
 Route::post('admin/brand/store','BrandController@store');
 Route::delete('/brand/destroy/{id}','BrandController@destroy');
 Route::get('/brand/{id}/edit','BrandController@edit');
 Route::put('/brand/update/{id}','BrandController@update');
-Route::delete('/brand/destroyMany/{id}','BrandController@destroyMany');
+Route::post('/brand/destroyMany/{id}','BrandController@destroyMany');
 
 Route::get('admin/clazz/list', 'ClazzController@index');
 Route::post('admin/clazz/store','ClazzController@store');

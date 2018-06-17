@@ -35,12 +35,17 @@
                                 <tbody>
                                 <tr id="{{$item->id}}">
                                     <td>
-                                        <div class="form-group">
-                                            <label>
-                                                <input type="checkbox" class="minimal check-one" value="{{$item->id}}"
-                                                       name="check-car[{{$item->id}}]">
-                                            </label>
-                                        </div>
+                                        <form id="formDeleteCheckBox" action="{{url('/brand/destroyMany/',['id'=>$item->id])}}" method="post"
+                                              enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            <div class="form-group">
+                                                <label>
+                                                    <input type="checkbox" class="minimal check-one"
+                                                           value="{{$item->id}}"
+                                                           name="check-car[{{$item->id}}]">
+                                                </label>
+                                            </div>
+                                        </form>
                                     </td>
                                     <td class="brand-id">{{$item->id}}</td>
                                     <td class="brand-name">{{$item->name}}</td>
@@ -86,12 +91,12 @@
                                     </select>
                                 </span>
                                 {{--<form action="" method="post">--}}
-                                    {{--<input type="hidden" name="_method" value="delete">--}}
-                                    {{--{{method_field('delete')}}--}}
-                                    {{--{{csrf_field()}}--}}
-                                    <button type="submit" class="btn btn-danger" id="btn-apply">
-                                        Apply
-                                    </button>
+                                {{--<input type="hidden" name="_method" value="delete">--}}
+                                {{--{{method_field('delete')}}--}}
+                                {{--{{csrf_field()}}--}}
+                                <button type="submit" class="btn btn-danger" id="btn-apply">
+                                    Apply
+                                </button>
                                 {{--</form>--}}
                             </label>
                         </div>
@@ -218,19 +223,10 @@
                 $('.check-one').prop('checked', false);
             }
         });
-        var arrayId;
-        var boxCheckId = [];
-        $('.check-one').click(function () {
-            // if ($(this).prop('checked',true)){
-            //     boxCheckId = $(this).val();
-            //     alert(boxCheckId);
-            //     console.log(boxCheckId);
-            // }
 
-            // boxCheckId[] ;
-            // console.log(boxCheckId)
+        $('.check-one').click(function () {
+
             if ($('#checkAll').prop("checked", true)) {
-                // alert('check');
                 $('#checkAll').prop('checked', false);
             }
             else {
@@ -238,7 +234,6 @@
             }
         });
         $('#btn-apply').click(function () {
-            // alert($('.check-one').val());
             switch ($('#selectAction').val()) {
                 case '0':
                     alert('vui long chon mot muc');
@@ -254,19 +249,20 @@
         var boxId = 1;
 
         function DeletedApply() {
+            $('#formDeleteCheckBox').submit();
             $.ajax({
 
-                method: 'delete',
-                url: '/brand/destroyMany/',
+                method: 'post',
+                url: '/brand/destroyMany/' + boxId,
                 data: {
-                    "_token":  $('meta[name="csrf-token"]').attr('content'),
+                    "_token": $('meta[name="csrf-token"]').attr('content'),
                     // id: '.check-one'
                 },
 
-                success:function () {
-                  // alert($('.check-one').prop('check',true).val())
-                    alert('oki')
-                //     // alert($('.check-one').val());
+                success: function (resp) {
+                    // alert($('.check-one').prop('check',true).val())
+                    alert(resp.id)
+                    //     // alert($('.check-one').val());
                 },
                 // error:function () {
                 //     alert(boxId)

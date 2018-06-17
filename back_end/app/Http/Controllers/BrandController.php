@@ -55,9 +55,9 @@ class BrandController extends Controller
 
     public function destroyMany(request $request, $id)
     {
-//        $idDelete = $request->input('check-car');
-        Brand::destroy($id);
-
-        return redirect('admin/brand/list');
+        $idDelete = $request->input('check-car');
+//        Brand::destroy($idDelete);
+        return $idDelete;
+//        return redirect('admin/brand/list');
     }
 }

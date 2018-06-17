@@ -78,4 +78,8 @@ class CarController extends Controller
 //        return view('admin.color.list')->with('color',$color);
 //return $color;
     }
+    public function destroy(request $request,$id){
+        Car::destroy($id);
+        return redirect('/admin/car/list');
+    }
 }
